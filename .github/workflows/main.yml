@@ -1,5 +1,5 @@
-
 # This is a basic workflow to help you get started with Actions
+
 name:  Teste workflow
 
 # Controls when the workflow will run
@@ -12,15 +12,13 @@ on:
 jobs:
    teste_job:
     name: Executando job de teste 
-    runs-on:  ubuntu-hosted #Definição do runner aqui, aqui pega a ultima versão do ubuntu, 
+    runs-on:  ubuntu-latest #Definição do runner aqui, aqui pega a ultima versão do ubuntu, 
     steps:  #os steps são os passos parar execução do workflow, é dentro do steps que é aninhado os stesp para executar
-    - name: Checkout code #Definição do nome da primeira step
+    - name: Step 1 #Definição do nome da primeira step
       uses: actions/checkout@v2 #Uses é uma diretiva que faz parte da steps, Nesta linha está sendo feito com a action checkou o checkout para baixar os arquivos, neste caso é usado a versão 2 pode ser vista em @V2
-    - name: Docker Login
 
     - name: Docker Login
       uses: docker/login-action@v3.0.0
       with:
         username: 'pedrolucascruz'
-    # Password or personal access token used to log against the Docker registry
         password:  ${{ secrets.MINHACHAVE }}
