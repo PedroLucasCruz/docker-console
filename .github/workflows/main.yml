@@ -28,6 +28,6 @@ jobs:
       uses: docker/build-push-action@v5.1.0
       with:
         cotext: .
-        tags: 'pedrolucascruz/fiapghactions:lastest'
+        tags: 'pedrolucascruz/teste2:latest'
         push: true
 
